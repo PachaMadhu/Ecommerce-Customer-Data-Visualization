@@ -8,7 +8,7 @@ df['Purchase Date'] = pd.to_datetime(df['Purchase Date'])
 df['Month'] = df['Purchase Date'].dt.strftime('%Y-%m')
 monthly_sales = df.groupby('Month')['Total Purchase Amount'].sum()
 
-#1 graph
+#1. Monthly Sales Trends
 plt.figure(figsize=(10, 5))
 plt.plot(monthly_sales.index, monthly_sales.values, marker='o', linestyle='-', color='b')
 plt.xlabel("Month")
